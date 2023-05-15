@@ -5,34 +5,34 @@
 
 
 
-1 Introduction:
+## 1 Introduction:
 
-1.1 Impact:
+### 1.1 Impact:
 Classifying whether a protein is an enzyme or not can have a significant impact on a wide range of fields, including biochemistry, molecular biology, and drug discovery. Enzymes are proteins that catalyze biochemical reactions in cells, and they play a crucial role in many biological processes, including metabolism, signaling, and gene expression. Identifying enzymes is essential for understanding these processes and developing new treatments for diseases that involve enzymatic dysfunction.
 
-1.2 Problem Statement:
+### 1.2 Problem Statement:
 The classification of proteins as enzymes plays a crucial role in many biological processes, such as digestion, metabolism, and energy production.  If a protein is classified as an enzyme, it means that it has the ability to speed up a specific chemical reaction, which is essential for many biological processes to occur. Enzymes work by lowering the activation energy required for a reaction to take place, which allows the reaction to occur more quickly and efficiently.
 
 
-1.3 Goal:
+### 1.3 Goal:
 Our goal is to apply the GCN, GAT and GIN neural models in order to have a better understanding about the classification of proteins as enzymes. This can ultimately lead to better drug discovery, biological research and evolutionary analysis. This also gives us exposure to dealing with graph data and implementing graph neural networks.
 
-2 Work Done
+## 2 Work Done
 
-2.1 Data collection:
+### 2.1 Data collection:
 This project’s data is collected from the geometric datasets found using Pytorch. The data set contains many data points related to proteins. The PROTEINS dataset is frequently used in the field of bioinformatics. It consists of 1113 graphs that represent proteins, with amino acids serving as nodes. An edge is present between two nodes when they are within a certain distance of each other (< 0.6 nanometers). The primary objective of this dataset is to determine whether a given protein is an enzyme or not. Enzymes are a type of protein that act as catalysts to speed up various chemical reactions in the cell. They play a vital role in important bodily functions such as digestion (lipases) and respiration (oxidases), as well as commercial applications such as the production of antibiotics.
 
 Fig 1: Data Statistics
 
 
-2.2 Data analysis:
+### 2.2 Data analysis:
 
 First we take our data set in graph form and get the 3D spring layout. Once we extract the node and edge positions from the graph information we create the 3D figure and plot the data points. The given projection is not the exact representation of the protein structure since the orientation can be extremely complex, but it gives us an idea of how it would look like.
 
 Fig 2: 3D projection of Protein structure
 
 We then create a seed and begin training the neural network.
-2.3 Model Comparisons:
+### 2.3 Model Comparisons:
 Graph isomorphism networks (GINs) are mathematically better than graph convolutional networks (GCNs) because they do not suffer from the problem of over-smoothing that plagues GCNs. In GCNs, information from neighboring nodes is repeatedly aggregated, which leads to a gradual loss of discriminative power and a flattening of the feature representation. This can result in indistinguishable node embeddings for different nodes in the graph, even if they have different roles or properties. This phenomenon is known as over-smoothing and can significantly limit the performance of GCNs. 
 
 
@@ -47,7 +47,7 @@ Fig 4
 
 Overall, the mathematical superiority of GINs over GCNs lies in their ability to capture more fine-grained information about the graph structure and to avoid the problem of over-smoothing, which can significantly limit the performance of GCNs.
 
-2.3 Cross Validation Results
+### 2.3 Cross Validation Results
 We did 10 fold cross validation on all three of the models; GCN, GIN and GCN+GIN.
 
 The results are somewhat similar to those that we presented in the slides during the presentation.
@@ -65,10 +65,10 @@ This is the 10 fold cross validation for GCN and GIN separately which is very cl
 
 
 
-3.1 Challenges faced:
+## 3.1 Challenges faced:
 We are currently facing challenges training the neural network. It is nothing too obstructive, we just need to apply more time. At the end of the day, time is the real challenge. We found that the more time we spend on the project the better our results are. It is just unfortunate that we cannot afford the time required all week because of our commitments to other classes.
 
-3.2 Limitations:
+### 3.2 Limitations:
 Although GCN and GIN models have shown promising results in protein classification tasks, there are some limitations that need to be considered:
 
 1. Graph size: GCN and GIN models can struggle with larger graphs, which can lead to scalability issues. This is because the size of the graph can affect the size of the adjacency matrix, and thus the computational complexity of the model.
@@ -80,5 +80,5 @@ Although GCN and GIN models have shown promising results in protein classificati
 It is important to note that these limitations are not unique to GCN and GIN models and are shared by other machine learning models as well. Nonetheless, these limitations highlight some of the challenges and considerations that need to be taken into account when using GCN and GIN models for protein classification.
 
 
-4 Next plan:
+## 4 Next plan:
 In the future, we would like to implement the Graph Attention Network (GAT)  Architecture to determine if the accuracy exceeds that of Graph Convolutional Networks and Graph Isomorphism Network. We would like to combine all three models, GIN, GCN and GAT to make a better prediction model.
