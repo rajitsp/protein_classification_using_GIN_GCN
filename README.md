@@ -3,8 +3,6 @@
 [embed] https://github.com/rajitsp/protein_classification_using_GIN_GCN/blob/main/CS_483_Project_Final_Report.pdf [/embed]
 
 
-
-
 ## 1 Introduction:
 
 ### 1.1 Impact:
@@ -22,6 +20,9 @@ Our goal is to apply the GCN, GAT and GIN neural models in order to have a bette
 ### 2.1 Data collection:
 This project’s data is collected from the geometric datasets found using Pytorch. The data set contains many data points related to proteins. The PROTEINS dataset is frequently used in the field of bioinformatics. It consists of 1113 graphs that represent proteins, with amino acids serving as nodes. An edge is present between two nodes when they are within a certain distance of each other (< 0.6 nanometers). The primary objective of this dataset is to determine whether a given protein is an enzyme or not. Enzymes are a type of protein that act as catalysts to speed up various chemical reactions in the cell. They play a vital role in important bodily functions such as digestion (lipases) and respiration (oxidases), as well as commercial applications such as the production of antibiotics.
 
+
+![alt text](https://github.com/rajitsp/protein_classification_using_GIN_GCN/blob/main/readme_imgs/stat_table.png)
+
 Fig 1: Data Statistics
 
 
@@ -29,17 +30,22 @@ Fig 1: Data Statistics
 
 First we take our data set in graph form and get the 3D spring layout. Once we extract the node and edge positions from the graph information we create the 3D figure and plot the data points. The given projection is not the exact representation of the protein structure since the orientation can be extremely complex, but it gives us an idea of how it would look like.
 
+![alt text](https://github.com/rajitsp/protein_classification_using_GIN_GCN/blob/main/readme_imgs/3d_projection.png)
+
 Fig 2: 3D projection of Protein structure
 
 We then create a seed and begin training the neural network.
+
 ### 2.3 Model Comparisons:
 Graph isomorphism networks (GINs) are mathematically better than graph convolutional networks (GCNs) because they do not suffer from the problem of over-smoothing that plagues GCNs. In GCNs, information from neighboring nodes is repeatedly aggregated, which leads to a gradual loss of discriminative power and a flattening of the feature representation. This can result in indistinguishable node embeddings for different nodes in the graph, even if they have different roles or properties. This phenomenon is known as over-smoothing and can significantly limit the performance of GCNs. 
 
+![alt text](https://github.com/rajitsp/protein_classification_using_GIN_GCN/blob/main/readme_imgs/gcn_classification.png)
 
 Fig 3
 
 GINs, on the other hand, use a more flexible aggregation function that is not prone to over-smoothing. The aggregation function in GINs is based on an isomorphism test between the original graph and the sum of the hidden representations at each layer. This allows GINs to better preserve the original graph structure and to capture more fine-grained information about each node.
 
+![alt text](https://github.com/rajitsp/protein_classification_using_GIN_GCN/blob/main/readme_imgs/gin_classification.png)
 
 Fig 4
 
@@ -52,14 +58,19 @@ We did 10 fold cross validation on all three of the models; GCN, GIN and GCN+GIN
 
 The results are somewhat similar to those that we presented in the slides during the presentation.
 
+![alt text](https://github.com/rajitsp/protein_classification_using_GIN_GCN/blob/main/readme_imgs/result.png)
 
-	Fig 5: Our results during presentation
+Fig 5: Our results during presentation
 
 
+
+![alt text](https://github.com/rajitsp/protein_classification_using_GIN_GCN/blob/main/readme_imgs/cross_val1.png)
 
 This is the 10 fold cross validation we did that supports the average for GCN+GIN accuracy.
 
 
+
+![alt text](https://github.com/rajitsp/protein_classification_using_GIN_GCN/blob/main/readme_imgs/cross_val2.png)
 
 This is the 10 fold cross validation for GCN and GIN separately which is very close to our GCN and GIN accuracy.
 
